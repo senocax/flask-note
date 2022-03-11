@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos!</title>
+</head>
+<body>
+    <h1>{{data.titulo}}</h1>
+    {% if data.nroCursos >1 %}
+        <h2>Nro de Cursos: {{data.nroCursos}}</h2>
+
+    {% for c in data.cursos %}
+        <li>{{c}}</l1>
+    {% endfor %}
+    {% else %}
+        <h1>No existen cursos...</h1>          
+    {% endif %}
+   
+</body>
+</html>
