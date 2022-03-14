@@ -1,14 +1,34 @@
 {% extends './layout.html'%}
 {% block title %} {{data.titulo}} {% endblock %}
 {% block body %}
-    
+   
 {% if data.nroCursos >1 %}
     <h2>Nro de Cursos: {{data.nroCursos}}</h2>
-
+<div>
+<h>Personas en los cursos: {{total_personas}}</h1> 
+</div>
 {% for c in data.cursos %}
     <li>{{c}}</l1>
 {% endfor %}
 {% else %}
     <h1>No existen cursos...</h1>          
 {% endif %}
+
+<table border="1">
+    <caption>Tabla de inscripciones</caption>
+    <tbody>
+      <tr>
+        <th>Nombre</th>
+        <th>APELLIDO</th>
+        <th>EMAIL</th>
+      </tr>
+{% for persona in personas %}
+      <tr>
+        <td>{{persona.nombre}}</td>
+        <td>{{persona.apellido}}</td>
+        <td>{{persona.email}}</td>
+      </tr>
+{% endfor %}
+    </tbody>
+  </table>
 {% endblock %}

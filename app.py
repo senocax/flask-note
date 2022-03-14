@@ -51,6 +51,9 @@ def after_request(response):
 @app.route('/')
 def index ():
 
+    personas = Persona.query.all()
+    total_personas= Persona.query.count()
+
     cursos =['Python', 'Java', 'C++', 'Html', 'Css']
     data = {
         'titulo':'Bienvenido a la API',
@@ -58,8 +61,9 @@ def index ():
         'cursos': cursos,
         'nroCursos':len(cursos)
     }
-
-    return render_template('index.html', data= data)
+    app.logger.debug(f'Listado de personas {personas}')
+    app.logger.debug(f'Cantidad de personas {total_personas}')
+    return render_template('index.html', data= data, personas= personas, total_personas= total_personas )
 
 @app.route('/contacto/<nombre>/<int:edad>')
 def contacto(nombre,edad):
