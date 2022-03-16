@@ -18,17 +18,28 @@
     <caption>Tabla de inscripciones</caption>
     <tbody>
       <tr>
+        <th>ID</th>
         <th>Nombre</th>
         <th>APELLIDO</th>
         <th>EMAIL</th>
+        <th>PERSONA</th>
+        <th>EDITAR</th>
+        <th>ELIMINAR</th>
       </tr>
 {% for persona in personas %}
       <tr>
+        <td>{{persona.id}}</td>
         <td>{{persona.nombre}}</td>
         <td>{{persona.apellido}}</td>
         <td>{{persona.email}}</td>
+        <td><a href="/contacto/{{persona.id}}">Ver</a></td>
+        <td><a href="/editar/{{persona.id}}">Editar</td>
+        <td><a href="/eliminar/{{persona.id}}">Eliminar</td>
       </tr>
 {% endfor %}
     </tbody>
   </table>
+  <h1><a href="/agregar">Agregar Persona</a></h1>
+  <h1><a href="/editar">Editar</a></h1>
+
 {% endblock %}

@@ -1,8 +1,8 @@
 {% extends './layout.html'%}
-{% block title %} {{data.titulo}} {% endblock %}
+{% block title %} {{persona.id}} {% endblock %}
 {% block body %}
 
-<h1>{{data.nombre}}</h1> 
-<h1>{{data.edad}}</h1>         
-
+<h1>{{persona.nombre}}</h1> 
+<h1>{{persona.apellido}}</h1>         
+<a href="url_for(/index.html)"> Regresamos al inicio</a>
 {% endblock %}
