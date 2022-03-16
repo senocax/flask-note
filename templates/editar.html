@@ -1,0 +1,24 @@
+{% extends './layout.html'%}
+{% block title %} Bievenidos al Formulario {% endblock %}
+{% block body %}
+<h1>Editar persona</h1>
+<form method="POST">
+    {{forma.csrf_token}}
+    <p>
+        {{forma.nombre.label}} <br/>
+        {{forma.nombre(size=30)}}
+    </p>
+    <p>
+        {{forma.apellido.label}} <br/>
+        {{forma.apellido(size=30)}}
+    </p>
+    <p>
+        {{forma.email.label}} <br/>
+        {{forma.email(size=30)}}
+    </p>
+    <p>
+        {{forma.enviar()}}
+    </p>
+</form>
+
+{% endblock %}
